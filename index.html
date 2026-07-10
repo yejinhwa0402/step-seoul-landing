@@ -183,6 +183,13 @@
           <h3><span class="lang-ko">투숙객·고객 만족도 향상</span><span class="lang-en">Higher Guest Satisfaction</span></h3>
           <p class="lang-ko">체크인 시 프리미엄 루트 1일권을 웰컴 키트에 포함해 투숙객 체험 가치를 높입니다.</p>
           <p class="lang-en">Include a premium day-pass route in your welcome kit at check-in to elevate the guest experience.</p>
+          <div class="review-teaser">
+            <p class="lang-ko"><span class="text-point">처음 가는 서울</span>, 걱정되나요? 이미 다녀온 많은 관광객들의 후기를 확인해보세요!</p>
+            <p class="lang-en"><span class="text-point">First time in Seoul?</span> See what travelers who've already walked these routes have to say.</p>
+            <button type="button" class="btn btn-primary btn-sm" id="openReviews">
+              <span class="lang-ko">여행 후기 더보기</span><span class="lang-en">See More Reviews</span>
+            </button>
+          </div>
         </div>
         <div class="benefit-card">
           <div class="benefit-img"><img src="assets/benefit-03-romantic.jpg" alt="Segment-specific romantic route"></div>
@@ -190,6 +197,9 @@
           <h3><span class="lang-ko">세그먼트별 특화 루트</span><span class="lang-en">Segment-Specific Routes</span></h3>
           <p class="lang-ko">패밀리(키즈), 시니어, 로맨틱, 반려동물 동반 등 고객 세그먼트에 맞춘 루트를 제공합니다.</p>
           <p class="lang-en">Tailored routes for families with kids, seniors, romantic getaways, and pet-friendly travelers.</p>
+          <button type="button" class="btn btn-primary btn-sm benefit-cta" id="openSegments">
+            <span class="lang-ko">세그먼트 자세히 보기</span><span class="lang-en">See Segment Details</span>
+          </button>
         </div>
         <div class="benefit-card">
           <div class="benefit-img"><img src="assets/benefit-04-trust.jpg" alt="Non-commercial data-driven trust"></div>
@@ -197,6 +207,16 @@
           <h3><span class="lang-ko">비상업적 데이터 기반 신뢰</span><span class="lang-en">Trust from Unbiased Data</span></h3>
           <p class="lang-ko">광고가 아닌 리뷰·평점 데이터 기반 추천이라 고객 신뢰도가 높고, 파트너 브랜드 이미지에도 긍정적입니다.</p>
           <p class="lang-en">Recommendations are review-driven, not ad-driven — building guest trust and reflecting well on your brand.</p>
+          <div class="data-method">
+            <p class="data-method-lead lang-ko">세그먼트별 루트는 도시지역개발경영·도시공학·엔지니어링 전문가와 연구진이 직접 추출한 데이터로 검증됩니다.</p>
+            <p class="data-method-lead lang-en">Every segment route is validated using data extracted directly by experts and researchers in urban development management, urban engineering, and civil engineering.</p>
+            <ul class="data-method-list">
+              <li><span class="lang-ko">🛰️ 위성 데이터 기반 정밀 지형 분석</span><span class="lang-en">🛰️ Precision terrain analysis via satellite imagery</span></li>
+              <li><span class="lang-ko">🗺️ Google 스트리트맵 기반 도로 폭·가로수 배치 분석</span><span class="lang-en">🗺️ Road width &amp; street-tree layout via Google Street Map</span></li>
+              <li><span class="lang-ko">📐 ArcGIS·QGIS 기반 건물 폴리곤 분석</span><span class="lang-en">📐 Building polygon analysis with ArcGIS &amp; QGIS</span></li>
+              <li><span class="lang-ko">🏙️ 서울시 3D 건물 데이터 기반 경사면 측정</span><span class="lang-en">🏙️ Slope measurement using Seoul's 3D building dataset</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -335,6 +355,117 @@
     <a href="https://stepseoul.com">stepseoul.com</a>
   </div>
 </footer>
+
+<div class="modal-overlay" id="reviewModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="reviewModalTitle">
+    <button type="button" class="modal-close" id="closeReviews" aria-label="Close">&times;</button>
+    <h3 id="reviewModalTitle"><span class="lang-ko">여행자 후기</span><span class="lang-en">Traveler Reviews</span></h3>
+    <p class="modal-sub lang-ko">Step Seoul 루트를 다녀온 관광객들의 생생한 후기입니다.</p>
+    <p class="modal-sub lang-en">Real feedback from travelers who've walked Step Seoul routes.</p>
+
+    <div class="review-list">
+      <div class="review-card">
+        <div class="review-head">
+          <img class="review-avatar" src="assets/review-01.jpg" alt="Heunginjimun">
+          <div>
+            <strong>Sarah W. 🇬🇧</strong>
+            <span class="review-stars">★★★★★</span>
+          </div>
+        </div>
+        <p class="lang-ko">흥인지문 근처 15분 루트, 진짜 알찼어요. 뻔한 관광지 느낌이 안 나서 더 좋았어요.</p>
+        <p class="lang-en">The 15-minute route near Heunginjimun felt like a mini adventure — none of that generic tourist-trap feeling.</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <img class="review-avatar" src="assets/review-02.jpg" alt="Hanbok street near Dongdaemun">
+          <div>
+            <strong>Marco R. 🇮🇹</strong>
+            <span class="review-stars">★★★★☆</span>
+          </div>
+        </div>
+        <p class="lang-ko">미팅 사이 남는 시간에 딱이었어요. 안 그랬으면 못 봤을 작은 한복집도 발견했네요.</p>
+        <p class="lang-en">Perfect for a spare hour between meetings. Found a tiny hanbok shop I'd never have noticed otherwise.</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <img class="review-avatar" src="assets/review-03.jpg" alt="Ikseon-dong">
+          <div>
+            <strong>Yuki T. 🇯🇵</strong>
+            <span class="review-stars">★★★★★</span>
+          </div>
+        </div>
+        <p class="lang-ko">익선동 골목까지 짧고 편하게 다녀왔어요. 사진 찍기도 좋고 카페도 예뻤어요.</p>
+        <p class="lang-en">A short, easy walk into the Ikseon-dong alleys — great photo spots and lovely cafés.</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <img class="review-avatar" src="assets/review-04.jpg" alt="Evening alley walk">
+          <div>
+            <strong>Emma L. 🇺🇸</strong>
+            <span class="review-stars">★★★★★</span>
+          </div>
+        </div>
+        <p class="lang-ko">혼자 여행 중인데 저녁에도 루트가 밝고 안전하게 느껴졌어요.</p>
+        <p class="lang-en">Traveling solo — the route felt well-lit and safe even in the evening.</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <img class="review-avatar" src="assets/review-05.jpg" alt="Cheonggyecheon">
+          <div>
+            <strong>Chen W. 🇨🇳</strong>
+            <span class="review-stars">★★★★☆</span>
+          </div>
+        </div>
+        <p class="lang-ko">청계천 옆 루트, 아이랑 걷기 딱 좋았어요. 다음엔 야경 루트도 도전해볼게요.</p>
+        <p class="lang-en">The route along Cheonggyecheon was perfect for walking with my kid. Next time I'll try the night route.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="segmentModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="segmentModalTitle">
+    <button type="button" class="modal-close" id="closeSegments" aria-label="Close">&times;</button>
+    <h3 id="segmentModalTitle"><span class="lang-ko">세그먼트별 특화 루트</span><span class="lang-en">Segment-Specific Routes</span></h3>
+    <p class="modal-sub lang-ko">고객 유형에 맞춰 사전 검증된 루트만 추천합니다.</p>
+    <p class="modal-sub lang-en">Every route is pre-vetted to match your guests' needs.</p>
+
+    <div class="segment-list">
+      <div class="segment-card">
+        <span class="segment-icon">👨‍👩‍👧‍👦</span>
+        <div>
+          <strong><span class="lang-ko">패밀리(키즈)</span><span class="lang-en">Family (with Kids)</span></strong>
+          <p class="lang-ko">🚼 유모차 진입 가능한 평지 위주로 구성 · 경사면·돌길·노키즈존은 제외하고 추천</p>
+          <p class="lang-en">🚼 Stroller-friendly, flat paths only — slopes, cobblestones, and no-kids-zones excluded</p>
+        </div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">🧓</span>
+        <div>
+          <strong><span class="lang-ko">시니어</span><span class="lang-en">Senior</span></strong>
+          <p class="lang-ko">🦯 지팡이·보행기 이용 가능한 완만한 길 위주 · 경사면·돌길은 제외하고 추천</p>
+          <p class="lang-en">🦯 Gentle paths for canes and walkers — slopes and cobblestones excluded</p>
+        </div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">👫</span>
+        <div>
+          <strong><span class="lang-ko">로맨틱</span><span class="lang-en">Romantic</span></strong>
+          <p class="lang-ko">💕 초보 커플도 부담 없는 데이트 코스 · 💸 20대를 위한 알뜰 코스 · 💍 프러포즈 명소까지 추천</p>
+          <p class="lang-en">💕 Easy-going date routes for new couples · 💸 budget-friendly picks for travelers in their 20s · 💍 proposal-worthy spots</p>
+        </div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">🐾</span>
+        <div>
+          <strong><span class="lang-ko">반려동물 동반</span><span class="lang-en">Pet-Friendly</span></strong>
+          <p class="lang-ko">🐶 반려동물과 함께 뛰어놀 수 있는 공원 · ☕ 반려동물 동반 입장 가능한 카페까지 연결</p>
+          <p class="lang-en">🐶 Parks where pets can run free · ☕ connected cafés that welcome pets too</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

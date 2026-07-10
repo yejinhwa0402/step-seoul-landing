@@ -71,6 +71,36 @@ document.addEventListener("DOMContentLoaded", () => {
     captionWrap.classList.add("is-visible");
   }
 
+  const setupModal = (modalId, openBtnId, closeBtnId) => {
+    const modal = document.getElementById(modalId);
+    const openBtn = document.getElementById(openBtnId);
+    const closeBtn = document.getElementById(closeBtnId);
+    if (!modal || !openBtn || !closeBtn) return;
+
+    const open = () => {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+    const close = () => {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+
+    openBtn.addEventListener("click", open);
+    closeBtn.addEventListener("click", close);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) close();
+    });
+  };
+
+  setupModal("reviewModal", "openReviews", "closeReviews");
+  setupModal("segmentModal", "openSegments", "closeSegments");
+
   const routeImg = document.getElementById("routeImg");
   const routeTabs = document.querySelectorAll(".route-tab");
   if (routeImg && routeTabs.length) {
