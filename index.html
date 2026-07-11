@@ -33,6 +33,7 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-background" aria-hidden="true"></div>
     <div class="container hero-inner">
       <p class="eyebrow">B2B PARTNERSHIP PROPOSAL</p>
       <h1 class="title-drop">
@@ -77,24 +78,33 @@
       <p class="section-eyebrow lang-ko">서비스 소개</p>
       <p class="section-eyebrow lang-en">SERVICE OVERVIEW</p>
       <h2 class="title-drop">
-        <span class="lang-ko">위치 기반, 도보 15분 맞춤 관광 추천</span>
-        <span class="lang-en">Location-based, 15-Minute Personalized Tour Recommendations</span>
+        <span class="lang-ko">위치 기반, 도보 15분 맞춤 관광 추천으로 서울을 더 가깝게</span>
+        <span class="lang-en">Location-based, 15-Minute Personalized Tour Recommendations for a More Walkable Seoul</span>
       </h2>
-      <p class="section-lead lang-ko">Step Seoul은 개인의 현재 위치를 기준으로 도보 15분 이내 최적화된 관광 동선을 추천하는 서비스입니다. 리뷰·별점·보행 가능성 데이터를 결합해 비상업적으로 신뢰할 수 있는 루트를 제공합니다.</p>
-      <p class="section-lead lang-en">Step Seoul recommends optimized walking routes within a 15-minute radius of a traveler's current location — built on non-commercial, review- and rating-based data for trustworthy discovery.</p>
+
+      <figure class="about-visual">
+        <img src="google_map_pr.png" alt="Google Maps reference image for 15-minute walking recommendations">
+        <figcaption class="reference-caption">
+          <span class="lang-ko">구글 맵의 15분 도보 단위 즐길거리 추천 방식을 참고한 예시 이미지입니다.</span>
+          <span class="lang-en">Reference image showing Google Maps-style 15-minute walking discovery recommendations.</span>
+        </figcaption>
+      </figure>
+
+      <p class="section-lead lang-ko">구글 맵에서 이미 도보 15분 단위의 즐길거리 추천이 활용되고 있는 만큼, 서울 지역 단위에서도 이와 같은 접근이 필요합니다. Step Seoul은 개인의 현재 위치를 기준으로 도보 15분 이내 최적화된 관광 동선을 추천하는 서비스입니다. 리뷰·별점·보행 가능성 데이터를 결합해 비상업적으로 신뢰할 수 있는 루트를 제공합니다.</p>
+      <p class="section-lead lang-en">As Google Maps already supports walkable 15-minute discovery experiences, Seoul’s neighborhood-scale tourism also needs a similar approach. Step Seoul recommends optimized walking routes within a 15-minute radius of a traveler's current location — built on non-commercial, review- and rating-based data for trustworthy discovery.</p>
 
       <div class="value-grid">
         <div class="value-card">
           <span class="value-icon">📍</span>
-          <h3><span class="lang-ko">위치 기반 추천</span><span class="lang-en">Location-Based</span></h3>
-          <p class="lang-ko">GPS 기반으로 현재 위치에서 도보 15분 이내 최적 루트와 순서를 실시간 추천</p>
-          <p class="lang-en">GPS-driven, real-time recommendation of the optimal route and order within a 15-minute walk</p>
+          <h3><span class="lang-ko">GPS, OSM 지도 기반 개별 위치 파악 용이</span><span class="lang-en">GPS and OSM Map-Based Individual Location Awareness</span></h3>
+          <p class="lang-ko">GPS와 OSM 지도 기반으로 현재 위치를 정밀하게 파악하고, 도보 15분 이내 최적 루트와 순서를 실시간 추천합니다</p>
+          <p class="lang-en">Using GPS and OSM map data, the system precisely identifies the user's current location and recommends the best walking route and order within 15 minutes</p>
         </div>
-        <div class="value-card">
+        <div class="value-card value-card-highlight">
           <span class="value-icon">🚶</span>
-          <h3><span class="lang-ko">자연스러운 동선</span><span class="lang-en">Natural Movement</span></h3>
-          <p class="lang-ko">보행 루트 자체가 하나의 완결된 관광 경험이 되도록 동선을 설계</p>
-          <p class="lang-en">Each walking route is designed to feel like a complete tourism experience in itself</p>
+          <h3><span class="lang-ko">서울 지역 단위의 자연스러운 동선</span><span class="lang-en">Natural Walkable Routes for Seoul Neighborhoods</span></h3>
+          <p class="lang-ko">도보 15분 단위로 이어지는 동선을 설계해, 지역마다 다른 분위기와 숨은 명소를 자연스럽게 경험하게 합니다</p>
+          <p class="lang-en">Routes are designed around 15-minute walking segments so each neighborhood reveals its own atmosphere and hidden places naturally</p>
           <div class="academic-note">
             <p class="academic-cite">Sheller &amp; Urry, <em>Tourism Mobilities</em> (2004)</p>
             <p class="lang-ko">관광을 단순한 이동이 아닌 사회적 현상으로 보는 '모빌리티 전환(Mobility Turn)' 개념입니다. 디지털 노마드처럼 일과 여가의 경계가 흐려지고, 장소는 여행자의 이동 방식에 맞춰 재구성됩니다 — '보행 자체가 관광 경험'이라는 Step Seoul의 설계 철학과 맞닿아 있습니다.</p>
@@ -103,9 +113,9 @@
         </div>
         <div class="value-card">
           <span class="value-icon">🔒</span>
-          <h3><span class="lang-ko">비상업적 신뢰</span><span class="lang-en">Non-Commercial Trust</span></h3>
-          <p class="lang-ko">광고·협찬 없이 리뷰·별점·보행 가능성 데이터 기반의 순수 추천</p>
-          <p class="lang-en">No ads or sponsorships — recommendations built purely on review and walkability data</p>
+          <h3><span class="lang-ko">서울형 비상업적 신뢰</span><span class="lang-en">Seoul-Scale Non-Commercial Trust</span></h3>
+          <p class="lang-ko">광고·협찬 없이 리뷰·별점·보행 가능성 데이터로, 서울 지역의 실제 이동 경험을 반영한 순수 추천을 제공합니다</p>
+          <p class="lang-en">Without ads or sponsorships, recommendations reflect real walking experiences in Seoul through reviews, ratings, and walkability data</p>
         </div>
       </div>
     </div>

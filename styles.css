@@ -135,10 +135,60 @@ a { color: inherit; text-decoration: none; }
 
 /* Hero */
 .hero {
+  position: relative;
+  overflow: hidden;
   padding-top: 88px;
   background:
-    radial-gradient(1200px 500px at 15% -10%, rgba(62,142,222,0.14), transparent 60%),
-    radial-gradient(900px 500px at 90% 0%, rgba(20,184,166,0.12), transparent 55%);
+    linear-gradient(115deg, rgba(10, 20, 34, 0.82) 0%, rgba(62, 142, 222, 0.24) 42%, rgba(20, 184, 166, 0.18) 74%, rgba(251, 252, 254, 0.96) 100%);
+}
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(10, 20, 34, 0.72) 0%, rgba(62, 142, 222, 0.16) 42%, rgba(20, 184, 166, 0.12) 74%, rgba(251, 252, 254, 0.9) 100%),
+    url("kbg_board.jpg") center/cover no-repeat;
+  filter: saturate(1.05) contrast(1.08) brightness(0.82);
+  transform: scale(1.03);
+}
+.hero-background::before,
+.hero-background::after {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.08);
+  animation: heroImageFade 18s ease-in-out infinite;
+  filter: saturate(1.1) contrast(1.1) brightness(0.82);
+}
+.hero-background::before {
+  background-image:
+    linear-gradient(135deg, rgba(3, 8, 16, 0.52) 0%, rgba(20, 36, 54, 0.18) 38%, rgba(255, 255, 255, 0.14) 100%),
+    url("tourists_han_board.jpg");
+  animation-delay: -6s;
+}
+.hero-background::after {
+  background-image:
+    linear-gradient(135deg, rgba(3, 8, 16, 0.58) 0%, rgba(20, 36, 54, 0.16) 38%, rgba(255, 255, 255, 0.12) 100%),
+    url("yellowtree_board.jpg");
+  animation-delay: -12s;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 55% at 50% 40%, rgba(3, 10, 20, 0.55) 0%, rgba(3, 10, 20, 0.22) 60%, rgba(3, 10, 20, 0) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.34) 0%, rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0.54) 100%);
+  pointer-events: none;
+}
+.hero > *:not(.hero-background) {
+  position: relative;
+  z-index: 1;
 }
 .hero-inner {
   text-align: center;
@@ -156,8 +206,34 @@ a { color: inherit; text-decoration: none; }
   border-radius: 999px;
   margin-bottom: 22px;
 }
+.hero-inner .eyebrow {
+  background: rgba(10, 20, 34, 0.55);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
 h1 {
   font-size: clamp(30px, 5vw, 48px);
+}
+.hero-inner h1 {
+  color: #f6f8fb;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.hero-inner h1 em {
+  color: #8fc3ff;
+}
+
+@keyframes heroImageFade {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  8%, 28% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  36%, 100% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
 }
 h1 em {
   font-style: normal;
@@ -170,12 +246,25 @@ h1 em {
   font-size: 17px;
   color: var(--ink-soft);
 }
+.hero-inner .hero-sub {
+  color: #eef2f7;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.4);
+}
 .hero-cta {
   margin-top: 34px;
   display: flex;
   gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
+}
+.hero-inner .btn-ghost {
+  color: #f6f8fb;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.hero-inner .btn-ghost:hover {
+  border-color: #fff;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .hero-stats {
@@ -224,6 +313,32 @@ h1 em {
   margin-bottom: 48px;
 }
 
+/* About visual */
+.about-visual {
+  margin: 0 auto 24px;
+  max-width: 460px;
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(62,142,222,0.04), rgba(20,184,166,0.03));
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: none;
+}
+.about-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  object-fit: cover;
+  opacity: 0.95;
+}
+.reference-caption {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
 /* Value grid */
 .value-grid {
   display: grid;
@@ -235,8 +350,33 @@ h1 em {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 30px 26px;
+  position: relative;
+}
+.value-card-highlight {
+  border-color: var(--point);
+  box-shadow: 0 0 0 2px rgba(255,181,71,0.18), 0 0 24px rgba(255,181,71,0.24);
+  animation: sparkleCard 1.6s ease-in-out infinite;
+}
+.value-card-highlight::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius) + 2px);
+  border: 1px solid rgba(255,181,71,0.5);
+  pointer-events: none;
+  animation: sparkleRing 1.6s ease-in-out infinite;
 }
 .value-icon { font-size: 28px; }
+
+@keyframes sparkleCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes sparkleRing {
+  0%, 100% { opacity: 0.4; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.01); }
+}
 .value-card h3 { font-size: 17px; margin: 14px 0 10px; }
 .academic-note {
   margin-top: 12px;
