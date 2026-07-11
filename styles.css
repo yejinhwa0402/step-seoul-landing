@@ -799,4 +799,5 @@ h1 em {
   .value-grid, .benefit-grid, .steps, .team-grid { grid-template-columns: 1fr; }
   .funnel-2, .funnel-3, .funnel-target { width: 100%; }
   .section { padding: 64px 0; }
+  .hero-background { flex-direction: column; }
 }
